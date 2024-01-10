@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoApp.ReservasPage"
+             x:Name="Reservas_Page"
              Title="Reservas"
              BackgroundColor="#d9e3f1">
     <ScrollView Margin="10">
         <VerticalStackLayout Spacing="10">
-            <!-- Aquí puedes poner cualquier botón o elemento que desees en la parte superior de la página -->
 
             <CollectionView x:Name="listaReservas" ItemsSource="{Binding Reservas}">
                 <CollectionView.ItemTemplate>
@@ -53,19 +53,18 @@
                                 <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                                     <!-- Botón para comentarios -->
                                     <Button Text="💬" 
-                                            Command="{Binding Path=BindingContext.ComentarCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                            Command="{Binding Path=BindingContext.ComentarCommand, Source={x:Reference Name=Reservas_Page}}"
                                             CommandParameter="{Binding .}" 
                                             BackgroundColor="#508eea" TextColor="White" 
                                             Margin="5" CornerRadius="10"/>
 
                                     <!-- Botón para eliminar la reserva -->
                                     <Button Text="🗑️" 
-                                            Command="{Binding Path=BindingContext.EliminarReservaCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                            Command="{Binding Path=BindingContext.EliminarReservaCommand, Source={x:Reference Name=Reservas_Page}}"
                                             CommandParameter="{Binding .}" 
                                             BackgroundColor="#FF3B30" TextColor="White" 
                                             Margin="5" CornerRadius="10"/>
                                 </StackLayout>
-
 
                             </Grid>
                         </Frame>

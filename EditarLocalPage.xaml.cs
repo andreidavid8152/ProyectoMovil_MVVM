@@ -6,7 +6,7 @@ namespace ProyectoApp;
 
 public partial class EditarLocalPage : ContentPage
 {
-    private readonly APIService _api;
+    private readonly APIService _api = null;
     private int _localId;
     public EditarLocalPage(int localId)
     {

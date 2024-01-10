@@ -14,31 +14,30 @@
 
                     <!-- Entrada para el Nombre -->
                     <EntryCell x:Name="NombreEntry"
-                           Placeholder="Nombre"
-                           Text="{Binding Nombre}"/>
+                               Placeholder="Nombre"
+                               Text="{Binding UserInput.Nombre}"/>
 
                     <!-- Entrada para el Email -->
                     <EntryCell x:Name="EmailEntry"
-                           Placeholder="Email"
-                           Keyboard="Email"
-                           Text="{Binding Email}"/>
+                               Placeholder="Email"
+                               Keyboard="Email"
+                               Text="{Binding UserInput.Email}"/>
 
                     <!-- Entrada para el Username -->
                     <EntryCell x:Name="UsernameEntry"
-                           Placeholder="Username"
-                           Text="{Binding Username}"/>
+                               Placeholder="Username"
+                               Text="{Binding UserInput.Username}"/>
 
                     <!-- Entrada para el Password -->
                     <EntryCell x:Name="PasswordEntry"
-                           Placeholder="Contraseña"
-                           Text="{Binding Password}"/>
+                               Placeholder="Contraseña"
+                               Text="{Binding UserInput.Password}"/>
 
                 </TableSection>
             </TableRoot>
         </TableView>
 
         <Button BackgroundColor="#14282f" Text="Registrarse" Scale="1.3" HorizontalOptions="Center" Margin="0,20,0,0"
-            Clicked="OnClickRegistrarse"/>
-
+                Command="{Binding RegistrarseCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
