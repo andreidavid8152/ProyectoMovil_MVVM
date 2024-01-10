@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoApp.MiPerfilPage"
+             Title="Mi Perfil"
+             BackgroundColor="#d9e3f1">
+    <VerticalStackLayout Spacing="20" Margin="15, 15, 15, 15">
+        
+        <!-- Etiqueta y Entrada para el Nombre -->
+        <StackLayout Orientation="Vertical" Margin="0,10">
+            <Label Text="Nombre" VerticalOptions="Center" FontAttributes="Bold" FontSize="17"/>
+            <Entry x:Name="NombreEntry"
+                   Placeholder="Nombre"
+                   Text="{Binding Nombre}"/>
+        </StackLayout>
+
+        <!-- Etiqueta y Entrada para el Email -->
+        <StackLayout Orientation="Vertical" Margin="0,10">
+            <Label Text="Email" VerticalOptions="Center" FontAttributes="Bold" FontSize="17"/>
+            <Entry x:Name="EmailEntry"
+                   Placeholder="Email"
+                   Keyboard="Email"
+                   Text="{Binding Email}"/>
+        </StackLayout>
+
+        <!-- Etiqueta y Entrada para el Username -->
+        <StackLayout Orientation="Vertical" Margin="0,10">
+            <Label Text="Username" VerticalOptions="Center" FontAttributes="Bold" FontSize="17"/>
+            <Entry x:Name="UsernameEntry"
+                   Placeholder="Username"
+                   Text="{Binding Username}"/>
+        </StackLayout>
+
+        <!-- Etiqueta y Entrada para la Contraseña -->
+        <StackLayout Orientation="Vertical" Margin="0,10">
+            <Label Text="Contraseña" VerticalOptions="Center" FontAttributes="Bold" FontSize="17"/>
+            <Entry x:Name="PasswordEntry"
+                   Placeholder="Contraseña"
+                   Text="{Binding Password}"/>
+        </StackLayout>
+
+        <Button BackgroundColor="#14282f" Text="Guardar" Scale="1.3" HorizontalOptions="Center" Margin="0,20,0,0"
+                Clicked="OnClickGuardar"/>
+    </VerticalStackLayout>
+</ContentPage>

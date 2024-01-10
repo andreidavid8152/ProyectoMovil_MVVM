@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoApp.ComentariosPage"
+             x:Name="Comentarios_Page"
+             Title="Mis comentarios"
+             BackgroundColor="#d9e3f1">
+    <ScrollView Margin="10">
+        <VerticalStackLayout Spacing="10">
+            <CollectionView x:Name="listaComentarios" ItemsSource="{Binding Comentarios}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="15" Padding="10" HasShadow="True" Margin="16" BorderColor="#b7bfcb" BackgroundColor="#b9c9e0">
+                            <Grid ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding Local.Imagenes[0].Url}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
+
+                                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" Padding="10">
+                                    <Label Text="{Binding Local.Nombre}" FontAttributes="Bold" FontSize="18"/>
+                                    <Label FontSize="15">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Calificacion: " FontAttributes="Bold" />
+                                                <Span Text="{Binding Calificacion}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label FontSize="15">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Texto: " FontAttributes="Bold" />
+                                                <Span Text="{Binding Texto}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label FontSize="15">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Fecha: " FontAttributes="Bold" />
+                                                <Span Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+
+                                <!-- Contenedor para el botón -->
+                                <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <!-- Botón para eliminar el comentario -->
+                                    <Button Text="🗑️"
+                                    Command="{Binding Path=BindingContext.EliminarComentarioCommand, Source={x:Reference Name=Comentarios_Page}}"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="#FF3B30" TextColor="White" 
+                                    Margin="5" CornerRadius="10"/>
+
+
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

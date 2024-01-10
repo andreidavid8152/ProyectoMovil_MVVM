@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoApp.EditarImagenesLocalPage"
+             Title="Editar Imagenes"
+             BackgroundColor="#d9e3f1">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+            <!-- Formulario de Edición -->
+            <VerticalStackLayout Spacing="10">
+
+                <!-- Imagen 1 -->
+                <Label Text="Imagen 1:" FontAttributes="Bold"/>
+                <Entry x:Name="imagen1Entry" 
+                       Placeholder="URL de la imagen 1" 
+                       PlaceholderColor="#3b4151"
+                       Keyboard="Url"/>
+
+                <!-- Imagen 2 -->
+                <Label Text="Imagen 2:" FontAttributes="Bold"/>
+                <Entry x:Name="imagen2Entry" 
+                       Placeholder="URL de la imagen 2" 
+                       PlaceholderColor="#3b4151"
+                       Keyboard="Url"/>
+
+                <!-- Imagen 3 -->
+                <Label Text="Imagen 3:" FontAttributes="Bold"/>
+                <Entry x:Name="imagen3Entry" 
+                       Placeholder="URL de la imagen 3" 
+                       PlaceholderColor="#3b4151"
+                       Keyboard="Url"/>
+
+            </VerticalStackLayout>
+
+            <!-- Botón Guardar -->
+            <Button Text="Guardar" 
+                    BackgroundColor="#3CAF50" 
+                    TextColor="#FFFFFF"
+                    Clicked="OnGuardarClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

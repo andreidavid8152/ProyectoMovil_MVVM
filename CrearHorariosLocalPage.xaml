@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="ProyectoApp.CrearHorariosLocalPage"
+                 Title="Crear horarios"
+                 BackgroundColor="#d9e3f1">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <!-- Horario 1 -->
+            <Label Text="Horario 1" FontAttributes="Bold" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TimePicker x:Name="Inicio1" Grid.Column="0"/>
+                <TimePicker x:Name="Fin1" Grid.Column="1"/>
+            </Grid>
+
+            <!-- Horario 2 -->
+            <Label Text="Horario 2" FontAttributes="Bold" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TimePicker x:Name="Inicio2" Grid.Column="0"/>
+                <TimePicker x:Name="Fin2" Grid.Column="1"/>
+            </Grid>
+
+            <!-- Horario 3 -->
+            <Label Text="Horario 3" FontAttributes="Bold" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TimePicker x:Name="Inicio3" Grid.Column="0"/>
+                <TimePicker x:Name="Fin3" Grid.Column="1"/>
+            </Grid>
+
+            <!-- Horario 4 -->
+            <Label Text="Horario 4" FontAttributes="Bold" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TimePicker x:Name="Inicio4" Grid.Column="0"/>
+                <TimePicker x:Name="Fin4" Grid.Column="1"/>
+            </Grid>
+
+            <!-- Botón Guardar -->
+            <Button Text="Guardar" BackgroundColor="#3CAF50" TextColor="White" Clicked="OnGuardarClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

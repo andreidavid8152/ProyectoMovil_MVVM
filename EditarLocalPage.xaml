@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoApp.EditarLocalPage"
+             Title="Editar local"
+             BackgroundColor="#d9e3f1">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label Text="Nombre" />
+            <Entry x:Name="NombreEntry" Placeholder="Ingrese un nombre" PlaceholderColor="#3b4151"/>
+
+            <Label Text="Descripcion" />
+            <Editor x:Name="DescripcionEditor" Placeholder="Ingrese una descripcion" PlaceholderColor="#3b4151" HeightRequest="100" />
+
+            <Label Text="Direccion" />
+            <Entry x:Name="DireccionEntry" Placeholder="Ingrese una direccion" PlaceholderColor="#3b4151"/>
+
+            <Label Text="Capacidad" />
+            <Entry x:Name="CapacidadEntry" Placeholder="Ingrese la capacidad" Keyboard="Numeric" PlaceholderColor="#3b4151"/>
+
+            <Button Text="Guardar" BackgroundColor="#3CAF50" TextColor="White" Clicked="OnGuardarClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
